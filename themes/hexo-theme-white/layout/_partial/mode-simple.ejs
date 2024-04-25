@@ -1,0 +1,54 @@
+<section class="simple-outer">
+    <section class="simple-inner common-typographic">
+        <div class="simple-post-list">
+            <!-- <% if(is_home_first_page() === true) { %>
+                <div class="item-divider item-homepage">
+                    <%- partial('_partial/homepage') %>
+                </div>
+            <% } %> -->
+            <% page.posts.sort('date', -1).each(function(post, i) { %>
+                <div class="simple-post-item item-divider">
+                    <div class="simple-item-left">
+                        <div class="simple-item-meta">
+                            <!-- <img src="<%= theme.intro.avator %>"> -->
+                            <div class="simple-meta-name"><%= post.author %></div>
+                            <div class="simple-meta-date">发布于<%= date(post.date, 'YYYY/MM/DD') %></div>
+                        </div>
+                        <a href="<%= url_for(post.path) %>">
+                            <div class="simple-post-title">
+                                <% if(post.title === "" || post.title === undefined){ %>
+                                    untitle
+                                <% } else { %>
+                                    <%= truncate(post.title, 20) %>
+                                <% } %>
+                            </div>
+                        <div class="simple-post-excerpt">
+                            <% if (post.excerpt) { %>
+                                <%- post.excerpt %>
+                            <% } else { %>
+                                <%- truncate(strip_html(post.content), {length: 128}) %>
+                            <% } %>
+                        </div>
+                        </a>
+                    </div>
+                    <% if(post.cover) { %>
+
+                        <div class="simple-item-right">
+                            <a href="<%= url_for(post.path) %>">
+                            <img src="<%= post.cover %>">
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+    <% if (page.total > 1){ %>
+        <nav class="paginator">
+            <%- paginator({
+                prev_text: theme.pagination.prev,
+                next_text: theme.pagination.next
+            }) %>
+        </nav>
+    <% } %>
+</section>

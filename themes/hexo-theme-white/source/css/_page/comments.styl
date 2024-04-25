@@ -1,0 +1,22 @@
+.bottom-comments-outer
+    display flex
+    justify-content: center
+    width $post-max-width
+    border-top 1px solid var(--color-embellish)
+    margin auto
+    margin-top 50px
+    margin-bottom: 100px
+
+
+.bottom-comments-inner
+    width: $post-max-width
+    .comment-title
+        margin-bottom 30px
+    @media $desktop-m
+        width: 730px
+    @media $desktop-s
+        width: 570px
+    @media $mobile-m
+        width: 470px
+    @media $mobile-s
+        width: 350px

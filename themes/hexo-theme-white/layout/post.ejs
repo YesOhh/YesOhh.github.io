@@ -1,0 +1,70 @@
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <%if(page.cover){%>
+      <div class="post-cover">
+            <span class="lazyload-img-span">
+                <img data-src="<%=page.cover%>" class="post-cover-img lazyload-img">
+            </span>
+      </div>
+      <%}%>
+      <div class="post-title">
+        <%=page.title%>
+      </div>
+      <div class="post-meta">
+        <!-- <img src="<%= theme.intro.avator %>"> -->
+        <div class="post-meta-name"><%= page.author %></div>
+        <div class="post-meta-date">发布于 <%= date(page.date, 'YYYY/MM/DD') %></div>
+      </div>
+    </div>
+    <div class="post-content-inner common-typographic">
+      <div class="post-placeholder"></div>
+      <div class="post-content-main">
+        <div class="post-content">
+          <%-page.content%>
+        </div>
+      </div>
+      <div class="post-placeholder post-toc-container">
+        <!-- toc -->
+        <% if (toc(page.content).length !== 0) { %>
+          <%- partial('_partial/toc') %>
+        <% } %>
+      </div>
+   </div>
+
+    <!-- 评论 -->
+    <% if (page.comments !== false && theme.comments.open === true){ %>
+    <div class="bottom-comments-outer">
+      <div class="bottom-comments-inner common-typographic">
+        <h2 class="comment-title">评论</h2>
+        <!-- valine -->
+        <% if ( theme.comments.system ==='valine' && theme.comments.valine && theme.comments.valine.appid && theme.comments.valine.appkey){ %>
+          <section id="comments" class="comments" style="margin-top: 150px;">
+            <style>
+              .comments{background:#fff}
+              @media screen and (max-width:900px){.comments{margin:auto;padding:10px;background:#fff}}
+            </style>
+            <%- partial('post/comment-valine', {
+              key: page.slug,
+              title: page.title,
+              url: config.url+url_for(page.path)
+              }) %>
+          </section>
+        <% } %>
+        <!-- Gitalk -->
+        <% if ( theme.comments.system ==='gitalk' && theme.comments.gitalk && theme.comments.gitalk.clientID && theme.comments.gitalk.clientSecret ){ %>
+          <%- partial('post/comment-gitalk') %>
+        <% } %>
+        <!-- livere -->
+        <% if ( theme.comments.system ==='livere' && theme.comments.livere && theme.comments.livere.dataId && theme.comments.livere.dataUid ){ %>
+          <%- partial('post/comment-livere') %>
+        <% } %>
+        <% if ( theme.comments.system ==='cusdis' && theme.comments.cusdis && theme.comments.cusdis.app_id){ %>
+          <%- partial('post/comment-cusdis') %>
+        <% } %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</article>
+<%- partial('_plugins/tocbot') %>

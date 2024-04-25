@@ -1,0 +1,150 @@
+/* 全局样式 */
+*
+  padding 0
+  margin 0
+body 
+  height 100%
+  width 100%
+  general-transition()
+  background var(--color-bg)
+  overflow-x hidden
+a 
+  text-decoration none
+  color var(--color-text-main)
+/* 滚动条 */
+
+/* menu */
+.menu-outer
+  font-family $font-title
+  width 100%
+  display flex
+  justify-content center
+.menu-inner 
+  width $layout-max-width
+  display flex
+  justify-content space-between
+  align-items center
+  padding 25px 0
+  transition all .3s
+.menu-site-name,.mobile-menu-site-name
+  font-family $font-title
+  font-size 1.9em
+.menu-site-name
+  a
+    color var(--color-text-secondary)
+    transition all .4s
+    position relative
+    &:hover
+      color var(--color-text-main)
+.menu-ul 
+  list-style none
+.menu-li
+  cursor pointer
+  float left
+  margin-right 20px
+  padding 0 10px
+  font-size 1.1em
+  color var(--color-text-secondary)
+  position relative
+  transition all .4s
+  &:hover 
+    color var(--color-text-main)
+.active-link
+  .menu-li
+    position: relative;
+    &:after
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      background-color: var(--color-theme-main)
+      border-radius: 50%;
+      z-index: -1
+
+/* body */
+.body-outer 
+  height 100%
+  width 100%
+  display flex
+  justify-content center
+/* home */
+.intro-section
+  width $layout-max-width
+  .intro-content
+    margin-top 100px
+    width 60%
+  .intro-title
+    font-family $font-title
+    font-size 4.5em
+    font-weight 1000
+    margin 0
+    padding 0
+  .intro-sub
+    font-family $font-content
+    margin-top 30px
+    font-size 1.32em
+    line-height 1.8em
+    margin-left 5px
+  .intro-contact
+    margin-top 10px
+    font-size 1.5em
+    line-height 1.8em
+    margin-left 5px
+    a
+      color var(--color-text-secondary)
+      general-transition()
+      &:hover
+        color var(--color-text-main)
+  .intro-content,a
+    color var(--color-text-main)
+    text-decoration none
+    margin-right 3px
+.paginator 
+  margin 50px 0
+  font-family $font-title
+  text-align center
+  font-size 1.17em
+  .page-number,.space
+    display none
+  .extend
+    color var(--color-text-secondary)
+    general-transition()
+    &:hover 
+      color var(--color-text-main)
+/* footer */
+.footer-outer 
+  display flex
+  justify-content center
+  font-family $font-title
+.footer-inner 
+  padding 40px 0
+  width $layout-max-width
+  display flex
+  justify-content space-between
+.footer-text 
+  color var(--color-text-secondary)
+  font-size 1.1em
+  a 
+    color var(--color-text-secondary)
+    general-transition()
+    &:hover 
+      color var(--color-text-main)
+.footer-contact 
+  font-size 1.2em
+.footer-ul 
+  list-style none
+.footer-li 
+  float left
+  margin-right 10px
+  transition all .3s
+  i 
+    color var(--color-text-secondary)
+    font-size 1.2em
+    general-transition()
+    padding 5px
+    border-radius 100%
+  &:hover 
+    i 
+      color var(--color-text-main)

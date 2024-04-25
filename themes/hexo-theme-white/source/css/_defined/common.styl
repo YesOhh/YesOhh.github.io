@@ -1,0 +1,196 @@
+// 自定义颜色
+$color-theme-main = #3366FF
+$color-theme-secondary = #1E3140
+$color-text-main = #333333
+$color-text-secondary = #898FA0
+$color-embellish = #f3f4f5
+
+
+// 说明
+//--color-bg 背景颜色
+//--color-theme-main 主题色
+//--color-text-main 文字主要颜色
+//--color-text-secondary 文字次要颜色
+//--color-dress 修饰颜色
+//--color-embellish 修饰颜色
+
+
+:root
+  --color-bg #F6F8FA
+  --color-theme-main #B54047
+  --color-text-main #24292F
+  --color-text-secondary rgba(51, 51, 51, 0.4)
+  --color-dress rgba(51, 51, 51, 0.2)
+  --color-embellish #ecedee
+
+
+.night
+  --color-bg #3b3a3a
+  --color-theme-main #1f3fb0
+  --color-text-main #e1e1e1
+  --color-text-secondary rgba(225, 225, 225, 0.4)
+  --color-dress rgba(225, 225, 225, 0.2)
+  --color-embellish #444444
+
+.cookie
+  --color-bg #C1C2C5
+  --color-theme-main #B54047
+  --color-text-main #292E4B
+  --color-text-secondary rgba(41, 46, 75, 0.6)
+  --color-dress rgba(41, 46, 75, 0.2)
+  --color-embellish #cfd0d3
+
+.forest
+  --color-bg #026A39
+  --color-theme-main #F7BD08
+  --color-text-main #F0F2E5
+  --color-text-secondary rgba(240, 242, 229, 0.6)
+  --color-dress rgba(240, 242, 229 0.2)
+  --color-embellish #03502b
+
+
+// 字体
+$font-title = 'Noto Serif SC', serif
+$font-content = 'Noto Serif SC', serif
+$font-code = 'Roboto Mono', monospace
+
+// 最大宽度
+$layout-max-width = 1500px
+// 文章内容宽度
+$post-max-width = 800px
+
+// 自适应
+$desktop-m = "screen and (max-width:1000px)"
+$desktop-s = "screen and (max-width:700px)"
+$mobile-m = "screen and (max-width:550px)"
+$mobile-s = "screen and (max-width:450px)"
+
+// 字体
+@font-face
+  font-family hack-regular
+  src url(https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/font/Hack-Regular.ttf)
+
+@font-face
+  font-family hack-italic
+  src url(https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/font/Hack-Italic.ttf)
+
+@font-face
+  font-family hack-bold
+  src url(https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/font/Hack-Bold.ttf)
+
+@font-face
+  font-family hack-bolditalic
+  src url(https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/font/Hack-BoldItalic.ttf)
+
+@font-face
+  font-family Gothic
+  src url(https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/font/GOTHIC.TTF)
+
+@font-face
+  font-family: Merriweather
+  src: url(https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/font/Merriweather-Regular-9.ttf)
+
+
+// 通用的排版样式
+
+.common-typographic
+  font-size 1.3em
+  font-family $font-content
+  font-weight 300
+  color: var(--color-text-main)
+  ul, ol
+    padding-left 2em
+    margin 20px 0
+.common-typographic
+  h1, h2, h3, h4, h5, h6
+    margin-top 23px
+    margin-bottom 16px
+    font-family $font-title
+  h1, h2
+    &::after
+      content "#"
+      display inline-block
+      color var(--color-text-secondary)
+      font-family $font-code
+      margin-left 0.5rem
+      font-weight: border
+  code
+    background var(--color-embellish)
+    font-size 0.85em
+    padding 0 7px
+    font-family $font-code
+  pre
+    max-width $post-max-width
+    overflow auto
+    font-size .85em
+    margin 22px 0
+    padding 1.3em 1.2em
+    background var(--color-embellish)
+    > code
+      font-family $font-code
+      background none
+  p
+    margin 20px 0
+  img
+    max-width 100%
+  .lazyload-img-span
+    margin 10px 0
+  iframe
+    width 100%
+    aspect-ratio 3.1/2
+  hr
+    margin 24px 0
+    height 3px
+    border none
+    background-color var(--color-embellish)
+  strong
+    font-family $font-title
+  blockquote
+    background var(--color-embellish)
+    margin 22px 0
+    font-size .9em
+    padding 1em
+    quotes "\201C""\201D""\2018""\2019";
+    &:before
+      color: var(--color-dress)
+      content: '“';
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.05em;
+      vertical-align: -0.24em;
+      margin-left -0.45em
+    p
+      display: inline;
+  a
+    box-shadow-transition()
+    &:hover
+      box-shadow-transition-hover()
+  table
+    border-collapse: collapse
+    margin: 30px 0px
+    width: 100%
+    border-width: 2px
+    border-style: solid
+    border-color: var(--color-embellish)
+    border-image: initial
+    border-spacing: 0px
+    display: table
+    thead
+      box-shadow: var(--color-embellish) 0px 4px 8px 0px
+      display: table-header-group
+      vertical-align: middle
+      border-color: inherit
+    th,td
+      padding: .9rem
+      border-width: 1px
+      border-style: solid
+      border-color: var(--color-embellish)
+      border-image: initial
+    tbody
+      display: table-row-group
+      vertical-align: middle
+      border-color: inherit
+      tr
+        display: table-row
+        vertical-align: inherit
+        border-color: inherit

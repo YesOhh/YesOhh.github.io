@@ -3,10 +3,10 @@ menu:
     url: /
     External: false
     name: 首页
-  Tags:
-    url: /tags
-    External: false
-    name: 标签
+  # Tags:
+  #   url: /tags
+  #   External: false
+  #   name: 标签
 #  Categories:
 #    url: /categories
 #    External: false
@@ -47,7 +47,7 @@ baidu_tongji:
 
 comment:
   enable: false
-  system: twikoo # 可选 gitalk、twikoo
+  system: # 可选 gitalk、twikoo
   config:
     gitalk:
       clientId:

@@ -3,7 +3,7 @@
 <div class="archives-container">
 
   <% site.categories.forEach(function(cate) { %>
-    <h2 class="year"><%= cate.name %></h2>
+    <h2 class="year"><a href="<%- url_for(cate.name) %>"><%= cate.name %></a></h2>
     <% site.posts.sort('date').reverse().forEach(function(post) { %>
       <% if (is_hide(post) === false && post.categories && post.categories.length > 0) { %>
 

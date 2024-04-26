@@ -8,6 +8,17 @@
       <% } %>
       <h2 class="post-title"><%= page.title %></h2>
       <div class="post-info post-detail-info">
+        <% if (page.author === 'yeshuang') { %>
+          叶双
+        <% } else if (page.author === 'fengmin') { %>
+          冯敏
+        <% } else if (page.author === 'wangyeqing') { %>
+          王叶青
+        <% } else if (page.author === 'huyingqian') { %>
+          胡盈芊
+        <% } else { %>
+          无名
+        <% } %>
         <span><i class="icon icon-calendar-outline"></i> <%= date(page.date, config.date_format) %></span>
         <% if (page.tags && page.tags.length > 0) { %>
           <span>

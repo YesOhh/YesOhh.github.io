@@ -1,4 +1,4 @@
-<% page.posts.forEach(function(post) { %>
+<% page.posts.sort('date').reverse().forEach(function(post) { %>
 <% if (is_hide(post) === false)  { %>
 <section class="post-item">
     <div class="content">
@@ -17,6 +17,15 @@
           </div>
       </a>
       <div class="post-info">
+        <% if (post.author === 'yeshuang') { %>
+          叶双
+        <% } else if (post.author === 'fengmin') { %>
+          冯敏
+        <% } else if (post.author === 'wangyeqing') { %>
+          王叶青
+        <% } else { %>
+          无名
+        <% } %>
         <span><i class="icon icon-calendar-outline"></i> <%= date(post.date, config.date_format) %></span>
         <% if (post.tags && post.tags.length > 0) { %>
           <span>

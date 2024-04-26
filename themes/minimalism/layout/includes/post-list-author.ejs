@@ -3,7 +3,19 @@
 <div class="archives-container">
 
     <% site.categories.forEach(function(cate) { %>
-      <h2 class="year"><a href="<%- url_for(cate.name) %>"><%= cate.name %>的文章</a></h2>
+      <h2 class="year">
+        <a href="<%- url_for(cate.name) %>">
+        <% if (cate.name === 'yeshuang') { %>
+          叶双的文章
+        <% } else if (cate.name === 'fengmin') { %>
+          冯敏的文章
+        <% } else if (cate.name === 'wangyeqing') { %>
+          王叶青的文章
+        <% } else { %>
+          文章
+        <% } %>
+        </a>
+      </h2>
       <% site.posts.sort('date').reverse().forEach(function(post) { %>
         <% if (is_hide(post) === false && post.categories && post.categories.length > 0) { %>
 

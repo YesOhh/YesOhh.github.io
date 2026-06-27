@@ -1,6 +1,6 @@
 ---
 title: 《好朋友写真集》活动反思
-date: 2023/3/7
+date: 2025/3/7
 comments: false
 author: yeshuang
 category: yeshuang

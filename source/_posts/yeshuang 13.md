@@ -1,6 +1,6 @@
 ---
 title: 学习故事：会商量的搭建者
-date: 2026/3/12
+date: 2025/3/12
 comments: false
 author: yeshuang
 category: yeshuang

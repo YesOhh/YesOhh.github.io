@@ -1,5 +1,5 @@
 ---
-title: 游戏观察记录: 建构中的合作意识
+title: 游戏观察记录：建构中的合作意识
 date: 2024/6/16
 comments: false
 author: yeshuang

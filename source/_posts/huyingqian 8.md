@@ -1,6 +1,6 @@
 ---
 title: 游戏观察记录
-date: 2022/12/1
+date: 2024/12/1
 comments: false
 author: huyingqian
 category: huyingqian

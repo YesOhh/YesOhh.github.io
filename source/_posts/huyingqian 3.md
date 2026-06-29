@@ -1,6 +1,6 @@
 ---
 title: 课程游戏化现状与困惑
-date: 2021/9/15
+date: 2023/9/15
 comments: false
 author: huyingqian
 category: huyingqian

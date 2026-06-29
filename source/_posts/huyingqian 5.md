@@ -1,6 +1,6 @@
 ---
 title: 《儿童视角下幼儿园课程资源的挖掘与运用》学习心得
-date: 2022/2/18
+date: 2024/3/18
 comments: false
 author: huyingqian
 category: huyingqian
